@@ -5,6 +5,7 @@ import EmailSubscription from '@/components/EmailSubscription';
 import { Calendar, User, ArrowRight, BookOpen, Target, TrendingUp } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
   const featuredPosts = [
@@ -114,7 +115,9 @@ const Blog = () => {
                       <span>{post.readTime}</span>
                     </div>
                     <CardTitle className="text-xl hover:text-blue-600 transition-colors cursor-pointer">
-                      {post.title}
+                      <Link to={`/blog/${post.id}`}>
+                        {post.title}
+                      </Link>
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -126,9 +129,11 @@ const Blog = () => {
                         <Calendar size={16} className="mr-2" />
                         <span>{post.date}</span>
                       </div>
-                      <Button variant="ghost" size="sm" className="text-blue-600 hover:text-blue-800">
-                        Read More <ArrowRight size={16} className="ml-1" />
-                      </Button>
+                      <Link to={`/blog/${post.id}`}>
+                        <Button variant="ghost" size="sm" className="text-blue-600 hover:text-blue-800">
+                          Read More <ArrowRight size={16} className="ml-1" />
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>
