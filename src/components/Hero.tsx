@@ -2,6 +2,7 @@
 import { ArrowRight, Play, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import HeroImage from "/hero-picture.jpg";
 
 const Hero = () => {
   return (
@@ -73,7 +74,7 @@ const Hero = () => {
           <div className="relative">
             <div className="relative z-10">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=700&fit=crop&crop=face"
+                src={HeroImage}
                 alt="Professional Business Coach"
                 className="rounded-2xl shadow-2xl w-full max-w-lg mx-auto"
               />
