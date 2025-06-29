@@ -11,8 +11,8 @@ const Header = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Book', href: '/book' },
+    // { name: 'Blog', href: '/blog' },
+    // { name: 'Book', href: '/book' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -25,9 +25,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">EC</span>
+              <span className="text-white font-bold text-xl">BC</span>
             </div>
-            <span className="text-2xl font-bold text-gray-900">Entrepreneur Coach</span>
+            <span className="text-2xl font-bold text-gray-900">Business Coach</span>
           </Link>
 
           {/* Desktop Navigation */}
