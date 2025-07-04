@@ -11,13 +11,13 @@ const About = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+        <section className="bg-[#f8eee7] py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                   Meet Your Business
-                  <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r to-[#db652f] from-[#f19c61] bg-clip-text text-transparent">
                     {" "}
                     Success Partner
                   </span>
@@ -31,12 +31,12 @@ const About = () => {
                 </p>
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600">500+</div>
+                    <div className="text-3xl font-bold text-[#db652f]">100+</div>
                     <div className="text-gray-600">Businesses Launched</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600">
-                      $50M+
+                    <div className="text-3xl font-bold text-[#db652f]">
+                      $50k+
                     </div>
                     <div className="text-gray-600">Revenue Generated</div>
                   </div>
@@ -93,8 +93,8 @@ const About = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="text-blue-600" size={32} />
+                <div className="bg-[#f8eee7] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="text-[#db652f]" size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Personalized
@@ -105,8 +105,8 @@ const About = () => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="text-blue-600" size={32} />
+                <div className="bg-[#f8eee7] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="text-[#db652f]" size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Proven</h3>
                 <p className="text-gray-600">
@@ -115,8 +115,8 @@ const About = () => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="text-blue-600" size={32} />
+                <div className="bg-[#f8eee7] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="text-[#db652f]" size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Action-Oriented
@@ -127,8 +127,8 @@ const About = () => {
                 </p>
               </div>
               <div className="text-center">
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="text-blue-600" size={32} />
+                <div className="bg-{#f8eee7} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="text-[#db652f]" size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   Supportive
@@ -143,7 +143,7 @@ const About = () => {
         </section>
 
         {/* Credentials */}
-        <section className="py-20 bg-white">
+        {/* <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
               Credentials & Recognition
@@ -181,7 +181,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <EmailSubscription />
       </main>

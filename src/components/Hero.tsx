@@ -1,11 +1,12 @@
 import { ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import HeroImage from "/hero-picture.jpg";
+import HeroImage from "/mrsfavour6b.jpg";
+// import HeroImage from "/hero-picture.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 pt-16 pb-20 overflow-hidden">
+    <section className="relative bg-[#f8eee7] pt-16 pb-20 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
@@ -14,15 +15,15 @@ const Hero = () => {
           {/* Content */}
           <div className="space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
-              <Star size={16} className="mr-2 text-blue-600" />
+            <div className="inline-flex items-center bg-[#eed8c8] text-[#db652f] px-4 py-2 rounded-full text-sm font-medium">
+              <Star size={16} className="mr-2 text-[#db652f]" />
               #1 Business Coach for Entrepreneurs
             </div>
 
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               Turn Your Business
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r to-[#db652f] from-[#f19c61] bg-clip-text text-transparent">
                 {" "}
                 Ideas
               </span>
@@ -72,7 +73,7 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/contact">
-                <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group">
+                <Button className="bg-[#db652f] hover:bg-[#db652f]/90 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group">
                   Start Your Journey
                   <ArrowRight
                     size={20}
@@ -108,8 +109,8 @@ const Hero = () => {
               {/* Floating Cards */}
               <div className="absolute -top-6 -left-6 bg-white p-4 rounded-xl shadow-lg border">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-600 font-bold text-xl">$</span>
+                  <div className="w-12 h-12 bg-[#f8eee7] rounded-full flex items-center justify-center">
+                    <span className="text-orange-600 font-bold text-xl">$</span>
                   </div>
                   <div>
                     <p className="text-gray-500 text-sm">Avg. Revenue Growth</p>
@@ -120,7 +121,7 @@ const Hero = () => {
 
               <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#f8eee7] rounded-full flex items-center justify-center">
                     <span className="text-blue-600 font-bold text-xl">⚡</span>
                   </div>
                   <div>
@@ -132,7 +133,7 @@ const Hero = () => {
             </div>
 
             {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-2xl transform rotate-3 scale-105 opacity-20"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#a35f2e] to-[#deac89] rounded-2xl transform rotate-3 scale-105 opacity-20"></div>
           </div>
         </div>
       </div>

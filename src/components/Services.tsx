@@ -58,11 +58,11 @@ const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {services.map((service, index) => (
             <Card key={index} className={`relative hover:shadow-xl transition-all duration-300 ${
-              service.popular ? 'ring-2 ring-blue-500 shadow-lg' : ''
+              service.popular ? 'ring-2 ring-[#db652f] shadow-lg' : ''
             }`}>
               {service.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                  <span className="bg-gradient-to-r to-[#db652f] from-[#f19c61] text-white px-4 py-2 rounded-full text-sm font-semibold">
                     Most Popular
                   </span>
                 </div>
@@ -71,13 +71,13 @@ const Services = () => {
               <CardHeader className="pb-4">
                 <div className="flex items-center space-x-4 mb-4">
                   <div className={`p-3 rounded-lg ${
-                    service.popular ? 'bg-blue-100 text-blue-600' : 'bg-gray-100 text-gray-600'
+                    service.popular ? 'bg-[#f8eee7] text-[#db652f]' : 'bg-[#f8eee7] text-[#db652f]'
                   }`}>
                     <service.icon size={32} />
                   </div>
                   <div>
                     <CardTitle className="text-2xl font-bold">{service.title}</CardTitle>
-                    <p className="text-lg font-semibold text-blue-600 mt-1">{service.price}</p>
+                    <p className="text-lg font-semibold text-[#db652f] mt-1">{service.price}</p>
                   </div>
                 </div>
                 <p className="text-gray-600 text-lg">{service.description}</p>
@@ -87,7 +87,7 @@ const Services = () => {
                 <ul className="space-y-3 mb-6">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-gray-700">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                      <div className="w-2 h-2 bg-[#db652f] rounded-full mr-3"></div>
                       {feature}
                     </li>
                   ))}
@@ -96,7 +96,7 @@ const Services = () => {
                 <Button 
                   className={`w-full group ${
                     service.popular 
-                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white' 
+                      ? 'bg-[#db652f] hover:bg-[#db652f]/90 text-white' 
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
                   }`}
                   asChild
@@ -112,7 +112,7 @@ const Services = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8">
+        <div className="text-center bg-[#f8eee7] rounded-2xl p-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             Not sure which program is right for you?
           </h3>
@@ -120,7 +120,7 @@ const Services = () => {
             Book a free 30-minute discovery call to discuss your goals and find the perfect fit 
             for your entrepreneurial journey.
           </p>
-          <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 text-lg font-semibold" asChild>
+          <Button className="bg-[#db652f] hover:bg-[#db652f]/90 text-white px-8 py-3 text-lg font-semibold" asChild>
             <Link to="/contact">
               Schedule Free Discovery Call
             </Link>

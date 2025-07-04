@@ -2,6 +2,9 @@
 import { Book, Star, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+// import book from "/public/book.jpg";
+
+
 const BookPromotion = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
@@ -17,7 +20,7 @@ const BookPromotion = () => {
               />
               
               {/* Floating Badge */}
-              <div className="absolute -top-4 -right-4 bg-orange-500 text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg">
+              <div className="absolute -top-4 -right-4 bg-[#db652f] text-white px-4 py-2 rounded-full font-bold text-sm shadow-lg">
                 New Release!
               </div>
             </div>
@@ -34,8 +37,8 @@ const BookPromotion = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              The Entrepreneur's 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-400"> Blueprint</span>
+              Too Young 
+              <span className="text-transparent bg-clip-text bg-gradient-to-r to-[#db652f] from-[#f19c61] "> Too Strong</span>
             </h2>
 
             <p className="text-xl text-gray-300 leading-relaxed">
@@ -75,14 +78,14 @@ const BookPromotion = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group">
+                <Button className="  bg-[#db652f] hover:bg-[#db652f]/90 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group">
                   Pre-Order Now on Sellar
                   <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform duration-200" />
                 </Button>
                 
-                <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg font-semibold transition-all duration-200">
+                {/* <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg font-semibold transition-all duration-200">
                   Read Sample Chapter
-                </Button>
+                </Button> */}
               </div>
 
               <p className="text-sm text-gray-400">

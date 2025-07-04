@@ -59,7 +59,7 @@ const EmailSubscription = () => {
             <Button
               type="submit"
               disabled={isSubscribing}
-              className="bg-orange-500 hover:bg-orange-600 text-white h-12 px-8 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+              className="bg-[#db652f] hover:bg-[#db652f]/90 text-white h-12 px-8 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
             >
               {isSubscribing ? (
                 <div className="flex items-center">
