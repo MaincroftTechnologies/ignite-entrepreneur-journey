@@ -24,10 +24,10 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-r bg-[#db652f] rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">BC</span>
             </div>
-            <span className="text-2xl font-bold text-gray-900">Business Coach</span>
+            <span className="text-2xl font-bold text-[#db652f]">Business Coach</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -38,8 +38,8 @@ const Header = () => {
                 to={item.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                   isActive(item.href)
-                    ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                    ? 'text-[#db652f] bg-[#f8eee7]'
+                    : 'text-gray-700 hover:text-[#db652f] hover:bg-[#f8eee7]'
                 }`}
               >
                 {item.name}
@@ -51,7 +51,7 @@ const Header = () => {
           <div className="hidden md:flex">
             <Link
               to="/contact"
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r bg-[#db652f] text-white px-6 py-2 rounded-lg font-medium hover:bg-[#db652f]/90 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               Get Started
             </Link>

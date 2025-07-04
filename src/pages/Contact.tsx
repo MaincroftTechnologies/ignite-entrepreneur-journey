@@ -53,11 +53,11 @@ const Contact = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+        <section className="bg-[#f8eee7] py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Let's Start Your 
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"> Success Story</span>
+              <span className="bg-[#db652f] bg-clip-text text-transparent"> Success Story</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Ready to transform your business idea into reality? Get in touch and let's discuss 
@@ -152,7 +152,7 @@ const Contact = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white h-12 text-lg font-semibold"
+                    className="w-full bg-[#db652f] hover:bg-[#db652f]/90 text-white h-12 text-lg font-semibold"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center">
@@ -167,13 +167,13 @@ const Contact = () => {
               </div>
 
               {/* Contact Info */}
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-8 rounded-2xl">
+              <div className="bg-[#f8eee7] p-8 rounded-2xl">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-blue-100 p-3 rounded-lg">
-                      <Mail className="text-blue-600" size={24} />
+                    <div className="bg-[#dacabe]/50 p-3 rounded-lg">
+                      <Mail className="text-[#db652f]" size={24} />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">Email</h4>
@@ -183,8 +183,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-blue-100 p-3 rounded-lg">
-                      <Phone className="text-blue-600" size={24} />
+                    <div className="bg-[#dacabe]/50 p-3 rounded-lg">
+                      <Phone className="text-[#db652f]" size={24} />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">Phone</h4>
@@ -194,8 +194,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-blue-100 p-3 rounded-lg">
-                      <MapPin className="text-blue-600" size={24} />
+                    <div className="bg-[#dacabe]/50 p-3 rounded-lg">
+                      <MapPin className="text-[#db652f]" size={24} />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">Location</h4>
@@ -205,8 +205,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="bg-blue-100 p-3 rounded-lg">
-                      <Clock className="text-blue-600" size={24} />
+                    <div className="bg-[#dacabe]/50 p-3 rounded-lg">
+                      <Clock className="text-[#db652f]" size={24} />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">Free Discovery Call</h4>
@@ -216,7 +216,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="mt-8 p-6 bg-white rounded-lg shadow-sm">
+                <div className="mt-8 p-6 bg-[#db652f]/5 rounded-lg shadow-sm">
                   <h4 className="font-semibold text-gray-900 mb-2">What to Expect</h4>
                   <ul className="text-sm text-gray-600 space-y-1">
                     <li>• Personalized response within 24 hours</li>
