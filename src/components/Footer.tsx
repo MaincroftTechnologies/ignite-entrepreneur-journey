@@ -15,9 +15,9 @@ const Footer = () => {
               <span className="text-2xl font-bold">Business Coach</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              I empower empoweryoung enttrepreneurs with faith-rooted decipline,
-              vision and resilience to build purposeful businesses that lead and
-              inspire.
+              I empower empower young enttrepreneurs with faith-rooted
+              decipline, vision and resilience to build purposeful businesses
+              that lead and inspire.
             </p>
             <div className="flex space-x-4">
               <a
@@ -138,8 +138,9 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © 2024 Entrepreneur Coach. All rights reserved. Built with passion
-            for entrepreneurial success.
+            © {new Date().getFullYear()} Favour Aruwei. All rights reserved.
+            Built with passion for entrepreneurial success by maincroft
+            technologies.
           </p>
         </div>
       </div>
