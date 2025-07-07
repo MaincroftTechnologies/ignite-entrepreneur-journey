@@ -1,12 +1,11 @@
-
-import { useState } from 'react';
-import { Mail, Gift } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { useToast } from '@/hooks/use-toast';
+import { useState } from "react";
+import { Mail, Gift } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useToast } from "@/hooks/use-toast";
 
 const EmailSubscription = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [isSubscribing, setIsSubscribing] = useState(false);
   const { toast } = useToast();
 
@@ -15,14 +14,14 @@ const EmailSubscription = () => {
     setIsSubscribing(true);
 
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     toast({
       title: "Welcome to the community!",
       description: "Check your email for your free Business Startup Guide.",
     });
 
-    setEmail('');
+    setEmail("");
     setIsSubscribing(false);
   };
 
@@ -34,14 +33,19 @@ const EmailSubscription = () => {
             <Gift size={48} className="text-white" />
           </div>
         </div>
-        
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Get Your Free Business Startup Guide
+          Ready to Level Up Your Business Mindset?
         </h2>
-        
+
         <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-          Join 10,000+ entrepreneurs who receive weekly insights, tips, and exclusive resources 
-          to accelerate their business growth. Plus, get instant access to our comprehensive startup guide!
+          I help driven entrepreneurs unlock real growth strategies. Grab my
+          FREE eBook:
+          <strong className="text-white">
+            "7 Business Shifts That Create Lasting Wealth"
+          </strong>
+          . Discover mindset shifts, habits, and tactics that separate success
+          from struggle. Drop your email and I’ll send it straight to your
+          inbox. Let’s grow together.
         </p>
 
         <form onSubmit={handleSubmit} className="max-w-md mx-auto">

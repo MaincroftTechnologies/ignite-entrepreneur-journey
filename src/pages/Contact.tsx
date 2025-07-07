@@ -6,38 +6,89 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
+
+const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    full_name: "",
+    user_email: "",
     phone: "",
     company: "",
     message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+
+  //   // Simulate API call
+  //   await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  //   toast({
+  //     title: "Message sent successfully!",
+  //     description: "I'll get back to you within 24 hours.",
+  //   });
+
+  //   setFormData({
+  //     name: "",
+  //     email: "",
+  //     phone: "",
+  //     company: "",
+  //     message: "",
+  //   });
+  //   setIsSubmitting(false);
+  // };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const templateParams = {
+      full_name: formData.full_name,
+      user_email: formData.user_email,
+      phone: formData.phone,
+      company: formData.company,
+      message: formData.message,
+    };
 
-    toast({
-      title: "Message sent successfully!",
-      description: "I'll get back to you within 24 hours.",
-    });
+    try {
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+      console.log(response);
 
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      message: "",
-    });
-    setIsSubmitting(false);
+      toast({
+        title: "Message sent successfully!",
+        description: "I'll get back to you within 24 hours.",
+      });
+
+      setFormData({
+        full_name: "",
+        user_email: "",
+        phone: "",
+        company: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+
+      toast({
+        title: "Something went wrong!",
+        description: "Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -59,7 +110,6 @@ const Contact = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Let's Start Your
               <span className="bg-[#db652f] bg-clip-text text-transparent">
-                {" "}
                 Success Story
               </span>
             </h1>
@@ -90,11 +140,11 @@ const Contact = () => {
                         Full Name *
                       </label>
                       <Input
-                        id="name"
-                        name="name"
+                        id="full_name"
+                        name="full_name"
                         type="text"
                         required
-                        value={formData.name}
+                        value={formData.full_name}
                         onChange={handleChange}
                         className="h-12"
                       />
@@ -107,11 +157,11 @@ const Contact = () => {
                         Email Address *
                       </label>
                       <Input
-                        id="email"
-                        name="email"
+                        id="user_email"
+                        name="user_email"
                         type="email"
                         required
-                        value={formData.email}
+                        value={formData.user_email}
                         onChange={handleChange}
                         className="h-12"
                       />
@@ -201,7 +251,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">Email</h4>
-                      <p className="text-gray-600">leadwisebizinstitute@gmail.com</p>
+                      <p className="text-gray-600">
+                        leadwisebizinstitute@gmail.com
+                      </p>
                       <p className="text-sm text-gray-500">
                         I respond within 24 hours
                       </p>
