@@ -17,21 +17,24 @@ const About = () => {
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                   Meet Your Business
-                  <span className="bg-gradient-to-r to-[#db652f] from-[#f19c61] bg-clip-text text-transparent">
-                    {" "}
+                  <span className="bg-gradient-to-r to-[#db652f] ml-2 from-[#f19c61] bg-clip-text text-transparent">
+                  
                     Success Partner
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 mb-6">
-                  Hi, I'm Sarah Johnson, and I've dedicated my career to helping
-                  ambitious entrepreneurs turn their visions into thriving
-                  businesses. With over 15 years of experience and 500+ success
-                  stories, I'm here to guide you on your entrepreneurial
-                  journey.
+                  Hi, I'm Favour Aruwei. I help young and ambitious
+                  entrepreneurs turn their ideas into impactful, purpose-driven
+                  businesses. After years of learning through real struggles and
+                  breakthroughs, my mission is to guide you with the clarity,
+                  mindset, and strategy needed to build and thrive.
                 </p>
+
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-[#db652f]">100+</div>
+                    <div className="text-3xl font-bold text-[#db652f]">
+                      100+
+                    </div>
                     <div className="text-gray-600">Businesses Launched</div>
                   </div>
                   <div className="text-center">
@@ -59,27 +62,36 @@ const About = () => {
             <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
               My Story
             </h2>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                My entrepreneurial journey began 20 years ago when I started my
-                first business from my college dorm room. Like many
-                entrepreneurs, I faced countless challenges, made numerous
-                mistakes, and learned hard lessons that no business school could
-                teach.
+            <div className="prose prose-lg max-w-none text-gray-600">
+              <p className="text-lg leading-relaxed mb-6">
+                In 2015, I launched my first business with one goal: to make
+                profit. But entrepreneurship quickly proved to be more than just
+                hustle—it demanded clarity, discipline, and structure. For five
+                years, I stayed busy but not productive, constantly reinvesting
+                without clear results. My finances were disorganized, and
+                despite the effort, progress was slow.
               </p>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                After successfully building and selling three companies, I
-                realized my true passion wasn't just in building businesses—it
-                was in empowering others to achieve their entrepreneurial
-                dreams. That's when I transitioned into coaching and consulting,
-                bringing real-world experience to aspiring business owners.
+              <p className="text-lg leading-relaxed mb-6">
+                Everything changed in year six. I paused, reflected, and
+                uncovered the missing elements: strategy, systems, and
+                self-awareness. I stopped chasing busyness and embraced
+                intentionality. That shift transformed my business—it became not
+                just profitable, but impactful and sustainable.
               </p>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                Today, I've had the privilege of working with entrepreneurs
-                across 25+ industries, from tech startups to traditional
-                brick-and-mortar businesses. My mission is simple: to provide
-                you with the strategies, support, and accountability you need to
-                build a business that doesn't just survive, but thrives.
+              <p className="text-lg leading-relaxed mb-6">
+                I also realized I wasn’t alone. Many entrepreneurs struggle
+                silently, and countless young people hold back because they
+                believe age is a barrier. That revelation sparked a deeper
+                mission—to coach and empower the next generation. I began
+                teaching that success has no age limit, and your mindset is your
+                greatest asset.
+              </p>
+              <p className="text-lg leading-relaxed">
+                Today, I run a thriving business and lead coaching programs that
+                help young adults build with clarity, confidence, and purpose.
+                My journey is proof that small beginnings aren’t
+                setbacks—they’re launchpads. And I’m here to help others turn
+                their struggle into strategy.
               </p>
             </div>
           </div>
