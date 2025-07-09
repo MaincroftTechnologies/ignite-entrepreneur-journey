@@ -11,6 +11,7 @@ import emailjs from "@emailjs/browser";
 const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const sheet_endpoint = import.meta.env.VITE_SHEET_URL;
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -46,6 +47,82 @@ const Contact = () => {
   //   setIsSubmitting(false);
   // };
 
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+
+  //   const templateParams = {
+  //     full_name: formData.full_name,
+  //     user_email: formData.user_email,
+  //     phone: formData.phone,
+  //     company: formData.company,
+  //     message: formData.message,
+  //   };
+
+  //   try {
+  //     //  Send email via EmailJS
+  //     const response = await emailjs.send(
+  //       serviceId,
+  //       templateId,
+  //       templateParams,
+  //       publicKey
+  //     );
+  //     console.log("EmailJS:", response);
+
+  //     console.log("data from the form", sheet_endpoint);
+  //     // return;
+
+  //     //  Send to Google Sheets via NoCodeAPI
+
+  //     const fullSheetURL = `${sheet_endpoint}?tabId=Contact`;
+
+  //     const sheetRes = await fetch(fullSheetURL, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify([
+  //         [
+  //           formData.full_name,
+  //           formData.user_email,
+  //           formData.phone,
+  //           formData.company,
+  //           formData.message,
+  //         ],
+  //       ]),
+  //     });
+
+  //     await sheetRes.json();
+
+  //     if (!sheetRes.ok) {
+  //       throw new Error("Failed to submit to Google Sheets");
+  //     }
+
+  //     toast({
+  //       title: "Message sent successfully!",
+  //       description: "I'll get back to you within 24 hours.",
+  //     });
+
+  //     // Reset form
+  //     setFormData({
+  //       full_name: "",
+  //       user_email: "",
+  //       phone: "",
+  //       company: "",
+  //       message: "",
+  //     });
+  //   } catch (error) {
+  //     console.error("Submission Error:", error);
+
+  //     toast({
+  //       title: "Something went wrong!",
+  //       description: "Please try again later.",
+  //     });
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -58,14 +135,33 @@ const Contact = () => {
       message: formData.message,
     };
 
+
+    const fullSheetURL = `${sheet_endpoint}?tabId=Contact`;
+
     try {
-      const response = await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        publicKey
-      );
-      console.log(response);
+      // Send both EmailJS and Sheets requests in parallel
+      const [emailRes, sheetRes] = await Promise.all([
+        emailjs.send(serviceId, templateId, templateParams, publicKey),
+        fetch(fullSheetURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify([
+            [
+              formData.full_name,
+              formData.user_email,
+              formData.phone,
+              formData.company,
+              formData.message,
+            ],
+          ]),
+        }),
+      ]);
+
+      console.log(emailRes);
+
+      if (!sheetRes.ok) {
+        throw new Error("Failed to submit to Google Sheets");
+      }
 
       toast({
         title: "Message sent successfully!",
@@ -80,8 +176,7 @@ const Contact = () => {
         message: "",
       });
     } catch (error) {
-      console.error("EmailJS Error:", error);
-
+      console.error("Submission Error:", error);
       toast({
         title: "Something went wrong!",
         description: "Please try again later.",
@@ -220,11 +315,14 @@ const Contact = () => {
                       placeholder="What challenges are you facing? What are your goals? How can I help you succeed?"
                     />
                   </div>
-
                   <Button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-[#db652f] hover:bg-[#db652f]/90 text-white h-12 text-lg font-semibold"
+                    disabled={
+                      isSubmitting ||
+                      !formData.full_name.trim() ||
+                      !formData.user_email.trim()
+                    }
+                    className="w-full bg-[#db652f] hover:bg-[#db652f]/90 text-white h-12 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center">
