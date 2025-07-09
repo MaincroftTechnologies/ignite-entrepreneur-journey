@@ -9,6 +9,7 @@ const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const sheet_endpoint = import.meta.env.VITE_SHEET_URL;
+const mail_chimp = import.meta.env.VITE_MAILCHIMP_URL;
 
 const EmailSubscription = () => {
   const [email, setEmail] = useState("");
@@ -46,6 +47,22 @@ const EmailSubscription = () => {
       if (!sheetRes.ok) {
         throw new Error("Failed to submit to Google Sheets");
       }
+
+      const form = document.createElement("form");
+      form.action = mail_chimp;
+      form.method = "POST";
+      form.target = "_blank"; // So Mailchimp's confirmation opens in a new tab
+      form.style.display = "none";
+
+      const emailInput = document.createElement("input");
+      emailInput.type = "hidden";
+      emailInput.name = "EMAIL"; // Mailchimp requires this name
+      emailInput.value = formData.user_email;
+
+      form.appendChild(emailInput);
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
 
       toast({
         title: "Message sent successfully!",
