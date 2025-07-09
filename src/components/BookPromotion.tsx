@@ -120,19 +120,19 @@ const BookPromotion = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <span className="text-3xl font-bold text-orange-400">
-                  $24.99
+                  Free
                 </span>
                 <span className="text-lg text-gray-400 line-through">
                   $39.99
                 </span>
                 <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  Save 38%
+                  Save 100%
                 </span>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button className="  bg-[#db652f] hover:bg-[#db652f]/90 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group">
-                  Pre-Order Now on Sellar
+                  Pre-Order Now
                   <ArrowRight
                     size={20}
                     className="ml-2 group-hover:translate-x-1 transition-transform duration-200"
