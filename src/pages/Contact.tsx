@@ -12,6 +12,7 @@ const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const sheet_endpoint = import.meta.env.VITE_SHEET_URL;
+const mail_chimp = import.meta.env.VITE_MAILCHIMP_URL_SECOND;
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +26,6 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -37,7 +37,6 @@ const Contact = () => {
       company: formData.company,
       message: formData.message,
     };
-
 
     const fullSheetURL = `${sheet_endpoint}?tabId=Contact`;
 
@@ -61,6 +60,31 @@ const Contact = () => {
       ]);
 
       console.log(emailRes);
+
+      const form = document.createElement("form");
+      form.action = mail_chimp;
+      form.method = "POST";
+      form.target = "_blank";
+      form.style.display = "none";
+
+      const fields = [
+        { name: "EMAIL", value: formData.user_email },
+        { name: "FNAME", value: formData.full_name },
+        { name: "PHONE", value: formData.phone },
+        { name: "COMPANY", value: formData.company },
+      ];
+
+      fields.forEach(({ name, value }) => {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = name;
+        input.value = value || "";
+        form.appendChild(input);
+      });
+
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
 
       if (!sheetRes.ok) {
         throw new Error("Failed to submit to Google Sheets");
