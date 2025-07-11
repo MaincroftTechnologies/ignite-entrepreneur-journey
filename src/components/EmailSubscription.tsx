@@ -105,13 +105,11 @@ const EmailSubscription = () => {
           Ready to Level Up Your Business Mindset?
         </h2>
 
-        <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+        <p className="text-xl leading-[1.6rem] sm:leading-relaxed text-blue-100 mb-8 max-w-2xl mx-auto">
           I help driven entrepreneurs unlock real growth strategies. Grab my
           FREE eBook:
-          <strong className="text-white">
-            "7 Business Shifts That Create Lasting Wealth"
-          </strong>
-          . Discover mindset shifts, habits, and tactics that separate success
+          <strong className="text-white">"Too Young Too Strong"</strong>.
+          Discover mindset shifts, habits, and tactics that separate success
           from struggle. Drop your email and I’ll send it straight to your
           inbox. Let’s grow together.
         </p>

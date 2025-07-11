@@ -49,7 +49,7 @@ const BookPromotion = () => {
               </span>
             </h2>
 
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-xl text-gray-300 leading-[1.6rem] sm:leading-relaxed">
               A bold and empowering guide for young adults ready to defy doubt,
               ditch delay, and build impactful lives from the inside out. Rooted
               in real stories, spiritual truth, and strategic tools, this book
@@ -119,9 +119,7 @@ const BookPromotion = () => {
             {/* Pre-order CTA */}
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
-                <span className="text-3xl font-bold text-orange-400">
-                  Free
-                </span>
+                <span className="text-3xl font-bold text-orange-400">Free</span>
                 <span className="text-lg text-gray-400 line-through">
                   $39.99
                 </span>

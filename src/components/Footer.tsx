@@ -15,7 +15,7 @@ const Footer = () => {
               <span className="text-2xl font-bold">Business Coach</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              I empower empower young enttrepreneurs with faith-rooted
+              I empower young enttrepreneurs with faith-rooted
               decipline, vision and resilience to build purposeful businesses
               that lead and inspire.
             </p>
