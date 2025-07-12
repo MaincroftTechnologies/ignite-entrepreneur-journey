@@ -113,6 +113,13 @@ const Contact = () => {
         description: "I'll get back to you within 24 hours.",
       });
 
+      const link = document.createElement("a");
+      link.href = "/business-guide.pdf";
+      link.download = "Too_Young_Too_STrong.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
       setFormData({
         full_name: "",
         user_email: "",

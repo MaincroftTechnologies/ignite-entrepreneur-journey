@@ -11,8 +11,12 @@ const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const sheet_endpoint = import.meta.env.VITE_SHEET_URL;
 const mail_chimp = import.meta.env.VITE_MAILCHIMP_URL;
 
-const EmailSubscription = () => {
-  const [email, setEmail] = useState("");
+interface PreOrderFormProps {
+  inputRef?: React.RefObject<HTMLInputElement>;
+}
+
+const EmailSubscription: React.FC<PreOrderFormProps> = ({ inputRef }) => {
+  // const [email, setEmail] = useState("");
   const [formData, setFormData] = useState({
     full_name: "",
     user_email: "",
@@ -69,6 +73,13 @@ const EmailSubscription = () => {
         description: "I'll get back to you within 24 hours.",
       });
 
+      const link = document.createElement("a");
+      link.href = "/business-guide.pdf";
+      link.download = "Too_Young_Too_STrong.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
       setFormData({
         full_name: "",
         user_email: "",
@@ -118,6 +129,7 @@ const EmailSubscription = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex-1">
               <Input
+                ref={inputRef}
                 type="email"
                 name="user_email"
                 placeholder="Enter your email address"

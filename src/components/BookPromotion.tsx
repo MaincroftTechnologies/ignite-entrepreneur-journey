@@ -3,7 +3,11 @@ import { Button } from "@/components/ui/button";
 
 import book from "/public/too young.png";
 
-const BookPromotion = () => {
+interface HeroSectionProps {
+  onPreOrderClick: () => void;
+}
+
+const BookPromotion: React.FC<HeroSectionProps> = ({ onPreOrderClick }) => {
   return (
     <section className="py-20 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,7 +41,7 @@ const BookPromotion = () => {
             <div className="flex items-center space-x-2 text-orange-400">
               <Book size={24} />
               <span className="text-sm font-semibold uppercase tracking-wide">
-                Coming Soon
+                New
               </span>
             </div>
 
@@ -129,8 +133,11 @@ const BookPromotion = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="  bg-[#db652f] hover:bg-[#db652f]/90 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group">
-                  Pre-Order Now
+                <Button
+                  onClick={onPreOrderClick}
+                  className="  bg-[#db652f] hover:bg-[#db652f]/90 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group"
+                >
+                  Get a Copy
                   <ArrowRight
                     size={20}
                     className="ml-2 group-hover:translate-x-1 transition-transform duration-200"
@@ -142,9 +149,7 @@ const BookPromotion = () => {
                 </Button> */}
               </div>
 
-              <p className="text-sm text-gray-400">
-                Expected release: Q2 2024 • Free shipping worldwide
-              </p>
+              {/* <p className="text-sm text-gray-400"> Free shipping worldwide</p> */}
             </div>
           </div>
         </div>
