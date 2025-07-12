@@ -82,7 +82,7 @@ const Contact = () => {
       const form = document.createElement("form");
       form.action = mail_chimp;
       form.method = "POST";
-      form.target = "_blank";
+      form.target = "hidden_iframe";
       form.style.display = "none";
 
       const fields = [
@@ -112,13 +112,6 @@ const Contact = () => {
         title: "Message sent successfully!",
         description: "I'll get back to you within 24 hours.",
       });
-
-      const link = document.createElement("a");
-      link.href = "/business-guide.pdf";
-      link.download = "Too_Young_Too_STrong.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
 
       setFormData({
         full_name: "",
