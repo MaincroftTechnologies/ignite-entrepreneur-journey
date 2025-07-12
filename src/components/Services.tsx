@@ -56,7 +56,7 @@ const Services = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Choose Your Path to Success
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl leading-[1.6rem] sm:leading-relaxed text-gray-600 max-w-3xl mx-auto">
             Whether you're just starting out or looking to scale, I have the
             right program to accelerate your entrepreneurial journey.
           </p>
@@ -99,7 +99,9 @@ const Services = () => {
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-600 text-lg">{service.description}</p>
+                <p className="text-gray-600 leading-[1.6rem] sm:leading-relaxed text-lg">
+                  {service.description}
+                </p>
               </CardHeader>
 
               <CardContent>
@@ -141,16 +143,18 @@ const Services = () => {
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             Not sure which program is right for you?
           </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          <p className="text-gray-600 mb-6  max-w-2xl mx-auto">
             Book a free 30-minute discovery call to discuss your goals and find
             the perfect fit for your entrepreneurial journey.
           </p>
-          <Button
-            className="bg-[#db652f] hover:bg-[#db652f]/90 text-white px-8 py-3 text-lg font-semibold"
-            asChild
-          >
-            <Link to="/contact">Schedule Free Discovery Call</Link>
-          </Button>
+          <div className="w-full  flex justify-center ">
+            <Button
+              className="bg-[#db652f] hover:bg-[#db652f]/90 text-white px-8 py-3 sm:text-lg font-semibold"
+              asChild
+            >
+              <Link to="/contact">Schedule Free Discovery Call</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

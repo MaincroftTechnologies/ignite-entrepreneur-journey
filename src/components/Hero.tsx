@@ -1,7 +1,7 @@
 import { ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import HeroImage from "/mrsfavour6b.jpg";
+import HeroImage from "/fav.hero.jpg";
 // import HeroImage from "/hero-picture.jpg";
 
 const Hero = () => {
@@ -15,13 +15,13 @@ const Hero = () => {
           {/* Content */}
           <div className="space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center bg-[#eed8c8] text-[#db652f] px-4 py-2 rounded-full text-sm font-medium">
+            <div className="inline-flex items-center bg-[#eed8c8] text-[#db652f] px-4 py-2 rounded-full sm:text-sm text-[13px] font-medium">
               <Star size={16} className="mr-2 text-[#db652f]" />
               #1 Business Coach for Entrepreneurs
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-[2.4rem] sm:leading-tight">
               Turn Your Business
               <span className="bg-gradient-to-r to-[#db652f] from-[#f19c61] bg-clip-text text-transparent">
                 {" "}
@@ -32,14 +32,14 @@ const Hero = () => {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
-              I empower empoweryoung enttrepreneurs with faith-rooted decipline,
+            <p className="text-xl text-gray-600 leading-[1.6rem] sm:leading-relaxed max-w-lg">
+              I empower young enttrepreneurs with faith-rooted decipline,
               vision and resilience to build purposeful businesses that lead and
               inspire.
             </p>
 
             {/* Social Proof */}
-            <div className="flex items-center space-x-6 text-sm text-gray-500">
+            <div className="flex sm:flex flex-col sm:items-center space-x-6 text-sm text-gray-500">
               <div className="flex items-center">
                 <div className="flex -space-x-2 mr-3">
                   <img
@@ -60,7 +60,7 @@ const Hero = () => {
                 </div>
                 <span>500+ Success Stories</span>
               </div>
-              <div className="flex items-center">
+              <div className="ml-[1rem] flex items-center">
                 <div className="flex text-yellow-400 mr-2">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={16} fill="currentColor" />

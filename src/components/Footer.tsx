@@ -1,6 +1,8 @@
 import { Mail, Linkedin, Twitter, Instagram, Book, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import logo from "/public/fa_logo_white.png";
+
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
@@ -10,14 +12,14 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 bg-[#db652f] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">BC</span>
+                <img src={logo} className="w-20" alt="" />
               </div>
               <span className="text-2xl font-bold">Business Coach</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              I empower empower young enttrepreneurs with faith-rooted
-              decipline, vision and resilience to build purposeful businesses
-              that lead and inspire.
+              I empower young enttrepreneurs with faith-rooted decipline, vision
+              and resilience to build purposeful businesses that lead and
+              inspire.
             </p>
             <div className="flex space-x-4">
               <a

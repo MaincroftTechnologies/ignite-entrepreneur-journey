@@ -1,19 +1,20 @@
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import logo from "/public/fa_logo_white.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
     // { name: 'Blog', href: '/blog' },
     // { name: 'Book', href: '/book' },
-    { name: 'Contact', href: '/contact' },
+    { name: "Contact", href: "/contact" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -25,9 +26,11 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-to-r bg-[#db652f] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">BC</span>
+              <img src={logo} className="w-20" alt="" />
             </div>
-            <span className="text-2xl font-bold text-[#db652f]">Business Coach</span>
+            <span className="text-2xl font-bold text-[#db652f]">
+              Business Coach
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -38,8 +41,8 @@ const Header = () => {
                 to={item.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                   isActive(item.href)
-                    ? 'text-[#db652f] bg-[#f8eee7]'
-                    : 'text-gray-700 hover:text-[#db652f] hover:bg-[#f8eee7]'
+                    ? "text-[#db652f] bg-[#f8eee7]"
+                    : "text-gray-700 hover:text-[#db652f] hover:bg-[#f8eee7]"
                 }`}
               >
                 {item.name}
@@ -60,7 +63,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-200"
+            className="md:hidden p-2 rounded-md text-gray-700 hover:text-[#db652f] hover:bg-[#f8eee7] transition-colors duration-200"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -77,8 +80,8 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                     isActive(item.href)
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                      ? "text-[#db652f] bg-[#f8eee7]"
+                      : "text-gray-700 hover:text-[#db652f] hover:bg-[#f8eee7]"
                   }`}
                 >
                   {item.name}
@@ -87,7 +90,7 @@ const Header = () => {
               <Link
                 to="/contact"
                 onClick={() => setIsMenuOpen(false)}
-                className="mt-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-lg font-medium text-center hover:from-blue-700 hover:to-indigo-700 transition-all duration-200"
+                className="mt-4 bg-[#db652f]  text-white px-6 py-2 rounded-lg font-medium text-center hover:bg-[#db652f]/90  transition-all duration-200"
               >
                 Get Started
               </Link>
