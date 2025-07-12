@@ -55,7 +55,7 @@ const EmailSubscription: React.FC<PreOrderFormProps> = ({ inputRef }) => {
       const form = document.createElement("form");
       form.action = mail_chimp;
       form.method = "POST";
-      form.target = "_blank"; // So Mailchimp's confirmation opens in a new tab
+      form.target = "hidden_iframe";
       form.style.display = "none";
 
       const emailInput = document.createElement("input");
@@ -74,7 +74,7 @@ const EmailSubscription: React.FC<PreOrderFormProps> = ({ inputRef }) => {
       });
 
       const link = document.createElement("a");
-      link.href = "/business-guide.pdf";
+      link.href = "/too_young.pdf";
       link.download = "Too_Young_Too_STrong.pdf";
       document.body.appendChild(link);
       link.click();
