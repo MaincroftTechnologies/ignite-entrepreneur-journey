@@ -1,10 +1,10 @@
-
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EmailSubscription from '@/components/EmailSubscription';
 import { Star, CheckCircle, Users, Award, Calendar, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 
 const Book = () => {
   const testimonials = [
@@ -99,13 +99,15 @@ const Book = () => {
                     Pre-Order Now - $24.99
                     <ExternalLink size={20} className="ml-2" />
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    className="px-8 py-4 text-lg font-semibold border-2 border-blue-600 text-blue-600 hover:bg-blue-50"
-                  >
-                    Read Free Chapter
-                  </Button>
+                  <Link to="/book/free-chapter">
+                    <Button 
+                      variant="outline" 
+                      size="lg"
+                      className="px-8 py-4 text-lg font-semibold border-2 border-blue-600 text-blue-600 hover:bg-blue-50 w-full sm:w-auto"
+                    >
+                      Read Free Chapter
+                    </Button>
+                  </Link>
                 </div>
                 <p className="text-sm text-gray-500 mt-4">
                   <Calendar size={16} className="inline mr-2" />

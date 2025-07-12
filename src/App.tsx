@@ -10,35 +10,12 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Book from "./pages/Book";
+import FreeChapter from "./pages/FreeChapter";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import { useEffect } from "react";
 
 const queryClient = new QueryClient();
-
-// const App = () => (
-//   <QueryClientProvider client={queryClient}>
-//     <TooltipProvider>
-//       <Toaster />
-//       <Sonner />
-//       <BrowserRouter>
-//         <ScrollToTop />
-//         <Routes>
-//           <Route path="/" element={<Index />} />
-//           <Route path="/about" element={<About />} />
-//           <Route path="/services" element={<ServicesPage />} />
-//           <Route path="/blog" element={<Blog />} />
-//           <Route path="/blog/:id" element={<BlogPost />} />
-//           <Route path="/book" element={<Book />} />
-//           <Route path="/contact" element={<Contact />} />
-//           <Route path="*" element={<NotFound />} />
-//         </Routes>
-//       </BrowserRouter>
-//     </TooltipProvider>
-//   </QueryClientProvider>
-// );
-
-// export default App;
 
 const App = () => {
   useEffect(() => {
@@ -65,6 +42,7 @@ const App = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/book" element={<Book />} />
+            <Route path="/book/free-chapter" element={<FreeChapter />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
