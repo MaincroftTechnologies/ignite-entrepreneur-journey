@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import EmailSubscription from "@/components/EmailSubscription";
 
-import HeroImage from "/hero-picture.jpg";
+import HeroImage from "/fabg2.jpg";
 
 const About = () => {
   return (

@@ -14,6 +14,18 @@ const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const sheet_endpoint = import.meta.env.VITE_SHEET_URL;
 const mail_chimp = import.meta.env.VITE_MAILCHIMP_URL_SECOND;
 
+const goalOptions = [
+  "New business idea",
+  "My Business Goal",
+  "Business Structure",
+  "Challenges and what to do",
+  "How to Start My Business",
+  "Having my idea ready but no capital",
+  "Having Capital to start but I need guidance",
+  "Have been doing business but no profit",
+  "Other",
+];
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     full_name: "",
@@ -21,6 +33,7 @@ const Contact = () => {
     phone: "",
     company: "",
     message: "",
+    selectedGoal: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,12 +43,17 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const finalMessage =
+      formData.selectedGoal === "Other"
+        ? formData.message
+        : formData.selectedGoal;
+
     const templateParams = {
       full_name: formData.full_name,
       user_email: formData.user_email,
-      phone: formData.phone,
-      company: formData.company,
-      message: formData.message,
+      // phone: formData.phone,
+      // company: formData.company,
+      // message: formData.message,
     };
 
     const fullSheetURL = `${sheet_endpoint}?tabId=Contact`;
@@ -53,7 +71,7 @@ const Contact = () => {
               formData.user_email,
               formData.phone,
               formData.company,
-              formData.message,
+              finalMessage,
             ],
           ]),
         }),
@@ -101,6 +119,7 @@ const Contact = () => {
         phone: "",
         company: "",
         message: "",
+        selectedGoal: "",
       });
     } catch (error) {
       console.error("Submission Error:", error);
@@ -131,7 +150,7 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Let's Start Your
-              <span className="bg-[#db652f] bg-clip-text text-transparent">
+              <span className="bg-[#db652f] ml-3 bg-clip-text text-transparent">
                 Success Story
               </span>
             </h1>
@@ -225,23 +244,73 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  <div>
+                  <div className="mb-6">
                     <label
-                      htmlFor="message"
+                      htmlFor="selectedGoal"
                       className="block text-sm font-medium text-gray-700 mb-2"
                     >
                       Tell me about your business goals *
                     </label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      rows={6}
-                      required
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="What challenges are you facing? What are your goals? How can I help you succeed?"
-                    />
+
+                    <div className="relative">
+                      <select
+                        id="selectedGoal"
+                        name="selectedGoal"
+                        required
+                        value={formData.selectedGoal}
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            selectedGoal: e.target.value,
+                            message: "",
+                          }))
+                        }
+                        className="appearance-none w-full border border-gray-300 rounded-md px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#000] text-sm pr-10"
+                      >
+                        <option value="" disabled>
+                          -- Select a goal --
+                        </option>
+                        {goalOptions.map((goal) => (
+                          <option key={goal} value={goal}>
+                            {goal}
+                          </option>
+                        ))}
+                      </select>
+
+                      {/* Custom Arrow */}
+                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500">
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {formData.selectedGoal === "Other" && (
+                      <div className="mt-4">
+                        <Textarea
+                          id="message"
+                          name="message"
+                          rows={6}
+                          required
+                          value={formData.message}
+                          onChange={(e) =>
+                            setFormData((prev) => ({
+                              ...prev,
+                              message: e.target.value,
+                            }))
+                          }
+                          placeholder="Please describe your business goals..."
+                        />
+                      </div>
+                    )}
                   </div>
+
                   <Button
                     type="submit"
                     disabled={
