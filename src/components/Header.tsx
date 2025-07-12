@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-
-import logo from "/public/fa_logo_white.png";
+import logo from "/logowhite.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,11 +24,15 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r bg-[#db652f] rounded-lg flex items-center justify-center">
-              <img src={logo} className="w-20" alt="" />
-            </div>
+            {/* <div className="w-10 h-10 bg-gradient-to-r bg-[#db652f] rounded-lg flex items-center justify-center">
+            </div> */}
+            <img
+              className="w-10 h-10 bg-gradient-to-r bg-[#db652f] rounded-lg "
+              src={logo}
+              alt=""
+            />
             <span className="text-2xl font-bold text-[#db652f]">
-              Business Coach
+              LEADWISE BIZ
             </span>
           </Link>
 

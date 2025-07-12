@@ -33,19 +33,19 @@ const Hero = () => {
 
             {/* Subheadline */}
             <p className="text-xl text-gray-600 leading-[1.6rem] sm:leading-relaxed max-w-lg">
-              I empower young enttrepreneurs with faith-rooted decipline,
-              vision and resilience to build purposeful businesses that lead and
-              inspire.
+              Empowering young entrepreneurs with faith-rooted discipline,
+              vision oriented and resilience to build a legacy business with
+              global impact.
             </p>
 
             {/* Social Proof */}
-            <div className="flex sm:flex flex-col sm:items-center space-x-6 text-sm text-gray-500">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-3 sm:space-y-0 text-sm text-gray-500">
               <div className="flex items-center">
                 <div className="flex -space-x-2 mr-3">
                   <img
                     className="w-8 h-8 rounded-full border-2 border-white"
-                   src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=700&fit=crop&crop=face"
-                 alt="Client"
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=700&fit=crop&crop=face"
+                    alt="Client"
                   />
                   <img
                     className="w-8 h-8 rounded-full border-2 border-white"
@@ -81,8 +81,6 @@ const Hero = () => {
                   />
                 </Button>
               </Link>
-
-
 
               {/* <Button
                 variant="outline"
