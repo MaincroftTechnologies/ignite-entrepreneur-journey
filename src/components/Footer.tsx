@@ -1,7 +1,6 @@
 import { Mail, Linkedin, Twitter, Instagram, Book, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-
-import logo from "/public/fa_logo_white.png";
+import logo from "/logowhite.png";
 
 const Footer = () => {
   return (
@@ -11,15 +10,20 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-[#db652f] rounded-lg flex items-center justify-center">
+              {/* <div className="w-10 h-10 bg-[#db652f] rounded-lg flex items-center justify-center">
                 <img src={logo} className="w-20" alt="" />
-              </div>
-              <span className="text-2xl font-bold">Business Coach</span>
+              </div> */}
+              <img
+                className="w-10 h-10 bg-gradient-to-r bg-[#db652f] rounded-lg "
+                src={logo}
+                alt=""
+              />
+              <span className="text-2xl font-bold">LEADWISE BIZ</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md">
-              I empower young enttrepreneurs with faith-rooted decipline, vision
-              and resilience to build purposeful businesses that lead and
-              inspire.
+              Empowering young entrepreneurs with faith-rooted discipline,
+              vision oriented and resilience to build a legacy business with
+              global impact.
             </p>
             <div className="flex space-x-4">
               <a
@@ -41,7 +45,8 @@ const Footer = () => {
                 <Twitter size={24} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/favour_aruwei/?hl=en"
+                target="_blank"
                 className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
               >
                 <Instagram size={24} />
@@ -140,9 +145,9 @@ const Footer = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Favour Aruwei. All rights reserved.
-            Built with passion for entrepreneurial success by maincroft
-            technologies.
+            © {new Date().getFullYear()} Leadwise Biz Institute. All rights
+            reserved. Built with passion for entrepreneurial success by
+            maincroft technologies.
           </p>
         </div>
       </div>
