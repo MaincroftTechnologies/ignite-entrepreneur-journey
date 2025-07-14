@@ -116,7 +116,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href=" https://chat.whatsapp.com/E8gYwMgMDL1BbDH8KHgq1y?mode=ac_t "
                   className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center"
                 >
                   <Users size={16} className="mr-2" />
