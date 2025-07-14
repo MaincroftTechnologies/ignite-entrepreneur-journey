@@ -125,7 +125,7 @@ const Contact = () => {
       console.error("Submission Error:", error);
       toast({
         title: "Something went wrong!",
-        description: "Please try again later.",
+        // description: "Please try again later.",
       });
     } finally {
       setIsSubmitting(false);
@@ -360,7 +360,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">Phone</h4>
-                      <p className="text-gray-600">+234 803 676 7712</p>
+                      <p className="text-gray-600">+234 811 579 8429</p>
                       <p className="text-sm text-gray-500">
                         Mon–Fri, 9am–5pm WAT (Nigeria Time)
                       </p>
