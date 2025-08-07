@@ -15,6 +15,9 @@ const sheet_endpoint = import.meta.env.VITE_SHEET_URL;
 const mail_chimp = import.meta.env.VITE_MAILCHIMP_URL_SECOND;
 
 const goalOptions = [
+  "Trailblazer Business(Free)",
+  "Trailblazer Bootcamp",
+  "Purpose to Profit Mentorship(Hight Ticket)",
   "New business idea",
   "My Business Goal",
   "Business Structure",
@@ -125,7 +128,7 @@ const Contact = () => {
       console.error("Submission Error:", error);
       toast({
         title: "Something went wrong!",
-        description: "Please try again later.",
+        // description: "Please try again later.",
       });
     } finally {
       setIsSubmitting(false);
@@ -268,7 +271,7 @@ const Contact = () => {
                         className="appearance-none w-full border border-gray-300 rounded-md px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#000] text-sm pr-10"
                       >
                         <option value="" disabled>
-                          -- Select a goal --
+                          Select a goal
                         </option>
                         {goalOptions.map((goal) => (
                           <option key={goal} value={goal}>
@@ -360,7 +363,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">Phone</h4>
-                      <p className="text-gray-600">+234 803 676 7712</p>
+                      <p className="text-gray-600">+234 811 579 8429</p>
                       <p className="text-sm text-gray-500">
                         Mon–Fri, 9am–5pm WAT (Nigeria Time)
                       </p>

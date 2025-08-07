@@ -74,22 +74,7 @@ const Footer = () => {
                   Services
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/blog"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/book"
-                  className="text-gray-300 hover:text-white transition-colors duration-200"
-                >
-                  Book
-                </Link>
-              </li>
+
               <li>
                 <Link
                   to="/contact"
@@ -116,7 +101,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href=" https://chat.whatsapp.com/JFk6HIKuoXz1yVeKp1PSWt?mode=ac_c"
                   className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center"
                 >
                   <Users size={16} className="mr-2" />

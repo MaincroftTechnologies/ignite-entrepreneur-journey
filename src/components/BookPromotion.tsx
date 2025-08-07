@@ -133,16 +133,19 @@ const BookPromotion: React.FC<HeroSectionProps> = ({ onPreOrderClick }) => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  onClick={onPreOrderClick}
-                  className="  bg-[#db652f] hover:bg-[#db652f]/90 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group"
+                <a
+                  href="https://selar.com/aj7e1611e3"
+                  target="_blank"
+                  className="bg-[#db652f] hover:bg-[#db652f]/90 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group flex items-center" // <-- add flex here
                 >
-                  Get a Copy
-                  <ArrowRight
-                    size={20}
-                    className="ml-2 group-hover:translate-x-1 transition-transform duration-200"
-                  />
-                </Button>
+                  <span className="flex items-center">
+                    Get a Copy
+                    <ArrowRight
+                      size={20}
+                      className="ml-2 group-hover:translate-x-1 transition-transform duration-200"
+                    />
+                  </span>
+                </a>
 
                 {/* <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg font-semibold transition-all duration-200">
                   Read Sample Chapter

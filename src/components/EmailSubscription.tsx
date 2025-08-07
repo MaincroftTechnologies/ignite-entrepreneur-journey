@@ -70,15 +70,15 @@ const EmailSubscription: React.FC<PreOrderFormProps> = ({ inputRef }) => {
 
       toast({
         title: "Message sent successfully!",
-        description: "I'll get back to you within 24 hours.",
+        // description: "I'll get back to you shortly.",
       });
 
-      const link = document.createElement("a");
-      link.href = "/too_young.pdf";
-      link.download = "Too_Young_Too_STrong.pdf";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // const link = document.createElement("a");
+      // link.href = "/too_young.pdf";
+      // link.download = "Too_Young_Too_STrong.pdf";
+      // document.body.appendChild(link);
+      // link.click();
+      // document.body.removeChild(link);
 
       setFormData({
         full_name: "",
